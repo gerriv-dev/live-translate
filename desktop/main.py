@@ -5,6 +5,7 @@ import time
 
 import requests
 
+SERVER_URI = "https://live-translate.gerritrive.de"
 MIC_FILE = "./config/mic.txt"
 FFMPEG_PATH = "./bin/ffmpeg"
 MEDIAMTX_PATH = "./bin/mediamtx"
@@ -16,7 +17,7 @@ def send_ip():
     s.connect(("8.8.8.8", 80))
     ip = s.getsockname()[0]
     s.close()
-    requests.post("http://localhost:8000/server-ip", data={"ip": ip})
+    requests.post(f"{SERVER_URI}/server-ip", data={"ip": ip})
 
 
 def handle_output(process):
