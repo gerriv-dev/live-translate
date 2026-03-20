@@ -1,9 +1,5 @@
 @echo off
 
-echo Building Live-Translate Desktop...
-echo.
+rmdir /s /q .\build
 
-nuitka main.py --mode=onefile --output-filename=LiveTranslate.exe --remove-output
-
-echo Build finished.
-echo.
+nuitka main.py --mode=onefile --output-filename=LiveTranslate.exe --output-dir=build --remove-output
